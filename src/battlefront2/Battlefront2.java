@@ -18,18 +18,25 @@ public class Battlefront2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        char pay, play;
+        char pay, play, dlc;
         Scanner scan = new Scanner(System.in);
         do {
             System.out.println("Play? y/n");
             play = scan.next().charAt(0);
             if (play == 'y') {
+                System.out.println("Buy DLC? y/n");
+                dlc = scan.next().charAt(0);
+                if(dlc=='y'){
+                    dlc='!';
+                }else{
+                    dlc=' ';
+                }
                 System.out.println("Pay? y/n");
                 pay = scan.next().charAt(0);
                 if (pay == 'y') {
-                    System.out.println("You win");
+                    System.out.println("You win"+dlc);
                 } else {
-                    System.out.println("You lose");
+                    System.out.println("You lose"+dlc);
                 }
             }
         } while (play == 'y');
